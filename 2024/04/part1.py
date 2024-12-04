@@ -29,33 +29,21 @@ s+=straight(rvsg)
 # southeast
 for y in range(len(grid)-3):
     for x in range(len(grid[0])-3):
-        sr=grid[y][x]
-        for i in range(1,4):
-            sr+=grid[y+i][x+i]
-        s+=cis(sr)
+        s+=cis("".join(grid[y+i][x+i] for i in range(4)))
 
 # southwest
 for y in range(len(grid)-3):
     for x in range(3,len(grid[0])):
-        sr=grid[y][x]
-        for i in range(1,4):
-            sr+=grid[y+i][x-i]
-        s+=cis(sr)
+        s+=cis("".join(grid[y+i][x-i] for i in range(4)))
 
 # northeast
 for y in range(3,len(grid)):
     for x in range(len(grid[0])-3):
-        sr=grid[y][x]
-        for i in range(1,4):
-            sr+=grid[y-i][x+i]
-        s+=cis(sr)
+        s+=cis("".join(grid[y-i][x+i] for i in range(4)))
 
 # northwest
 for y in range(3,len(grid)):
     for x in range(3,len(grid[0])):
-        sr=grid[y][x]
-        for i in range(1,4):
-            sr+=grid[y-i][x-i]
-        s+=cis(sr)
+        s+=cis("".join(grid[y-i][x-i] for i in range(4)))
 
 print(s)
