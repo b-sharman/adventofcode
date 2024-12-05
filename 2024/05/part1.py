@@ -1,9 +1,8 @@
-n=int(input())
-rules=[tuple(int(x)for x in input().split("|")) for _ in range(n)]
-m=int(input())
-updates=[]
-for _ in range(m):
-    updates.append({int(x):i for i,x in enumerate(input().split(","))})
+rules=[tuple(int(x)for x in input().split("|")) for _ in range(int(input()))]
+updates=[
+    {int(x):i for i,x in enumerate(input().split(","))}
+    for _ in range(int(input()))
+]
 sm=0
 for u in updates:
     valid=True
