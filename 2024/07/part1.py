@@ -1,4 +1,4 @@
-eqs=[(int((x:=input().split(":"))[0]), list(map(int, filter(lambda q: q, x[1].split(" "))))) for _ in range(int(input()))]
+eqs=[(int((x:=input().split(":"))[0]), list(map(int, filter(bool, x[1].split(" "))))) for _ in range(int(input()))]
 sm=0
 for rslt, nums in eqs:
     c=[['+'], ['*']]
